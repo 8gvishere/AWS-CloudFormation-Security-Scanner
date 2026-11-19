@@ -1,0 +1,14 @@
+{
+  "Resources": {
+    "StandalonePublicSSH": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {"Ref": "ExistingSecurityGroup"},
+        "IpProtocol": "tcp",
+        "FromPort": 20,
+        "ToPort": 24,
+        "CidrIp": "0.0.0.0/0"
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+# For analysis only; never deploy this intentionally insecure sample.
+Resources:
+  PublicSSH:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Insecure example for scanner tests
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0

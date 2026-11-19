@@ -1,0 +1,15 @@
+# Week 1: two basic AWS resources declared in YAML.
+Resources:
+  AdminSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: SSH from a documentation-only range
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 192.0.2.0/24
+  ExampleBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: example-learning-bucket-only

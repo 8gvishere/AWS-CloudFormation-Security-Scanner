@@ -1,0 +1,10 @@
+Resources:
+  RestrictedSSH:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: SSH allowed only from a restricted sample CIDR
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 192.0.2.0/24

@@ -1,0 +1,14 @@
+# Week 3: a parameter is unresolved until CloudFormation deployment.
+Parameters:
+  AllowedCidr:
+    Type: String
+Resources:
+  ParameterBasedSSH:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Source address is provided at deployment time
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: !Ref AllowedCidr

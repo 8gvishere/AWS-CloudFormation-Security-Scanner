@@ -1,0 +1,6 @@
+# Not yet checked by the Week 3 SSH rule. Absence of results is not security assurance.
+Resources:
+  UncheckedBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: teaching-only-standalone-example

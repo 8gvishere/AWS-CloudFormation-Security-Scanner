@@ -1,0 +1,18 @@
+Parameters:
+  PublicSSHEnabled:
+    Type: String
+    AllowedValues: ["yes", "no"]
+Conditions:
+  UsePublicSSH:
+    Fn::Equals: [!Ref PublicSSHEnabled, "yes"]
+Resources:
+  SometimesPublic:
+    Condition: UsePublicSSH
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Conditional example - REVIEW, not definite deployed exposure
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
